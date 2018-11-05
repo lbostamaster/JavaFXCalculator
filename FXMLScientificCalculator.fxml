@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="anchorPane" fx:id="anchorPane" onKeyReleased="#handleOnKeyReleased" onKeyTyped="#handleOnKeyTyped" prefHeight="411.0" prefWidth="220.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxCalculator.FXMLsciCalculatorController">
+    <children>
+      <MenuBar prefHeight="25.0" prefWidth="260.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#exitProgram" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+                  <MenuItem fx:id="copy" mnemonicParsing="false" onAction="#handleCopyAction" onMenuValidation="#handleCopyAction" text="Copy" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="View">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleStdCalcAction" text="Standard Calculator" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="menuAbout" mnemonicParsing="false" onAction="#aboutAction" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <GridPane alignment="CENTER" layoutX="34.0" layoutY="119.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="110.0">
+        <columnConstraints>
+            <ColumnConstraints maxWidth="50.0" minWidth="50.0" prefWidth="100.0" />
+            <ColumnConstraints maxWidth="50.0" minWidth="50.0" prefWidth="100.0" />
+            <ColumnConstraints maxWidth="50.0" minWidth="50.0" prefWidth="100.0" />
+            <ColumnConstraints maxWidth="50.0" minWidth="50.0" prefWidth="100.0" />
+            <ColumnConstraints maxWidth="50.0" minWidth="50.0" prefWidth="100.0" />
+          <ColumnConstraints maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+          <ColumnConstraints maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+            <ColumnConstraints maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+            <ColumnConstraints maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+            <ColumnConstraints maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" />
+            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" />
+          <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" />
+          <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" />
+          <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" />
+            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" />
+            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" />
+            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" />
+        </rowConstraints>
+         <children>
+              
+            <Button fx:id="buttonCE" minHeight="40.0" minWidth="40.0" onAction="#handleButtonCEAction" prefHeight="40.0" prefWidth="40.0" text="CE" GridPane.columnIndex="6" GridPane.rowIndex="3">
+               <tooltip>
+                  <Tooltip text="Clrear Entry" />
+               </tooltip></Button>
+            <Button fx:id="buttonDel" minHeight="40.0" minWidth="40.0" onAction="#handleButtonDelAction" prefHeight="40.0" prefWidth="40.0" text="←" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <Button fx:id="button7" minHeight="40.0" minWidth="40.0" onAction="#handleNumberAction" prefHeight="40.0" prefWidth="40.0" text="7" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <Button fx:id="button8" minHeight="40.0" minWidth="40.0" onAction="#handleNumberAction" prefHeight="40.0" prefWidth="40.0" text="8" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+            <Button fx:id="button9" minHeight="40.0" minWidth="40.0" onAction="#handleNumberAction" prefHeight="40.0" prefWidth="40.0" text="9" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+            <Button fx:id="button4" minHeight="40.0" onAction="#handleNumberAction" prefHeight="40.0" prefWidth="40.0" text="4" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+            <Button fx:id="button6" minHeight="40.0" onAction="#handleNumberAction" prefHeight="40.0" prefWidth="40.0" text="6" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+            <Button fx:id="button1" minHeight="40.0" onAction="#handleNumberAction" prefHeight="40.0" prefWidth="40.0" text="1" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+            <Button fx:id="button2" minHeight="40.0" onAction="#handleNumberAction" prefHeight="40.0" prefWidth="40.0" text="2" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+            <Button fx:id="button3" minHeight="40.0" onAction="#handleNumberAction" prefHeight="40.0" prefWidth="40.0" text="3" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+            <Button fx:id="button5" minHeight="40.0" minWidth="40.0" onAction="#handleNumberAction" prefHeight="40.0" prefWidth="40.0" text="5" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+            <Button fx:id="buttonPoint" minHeight="40.0" onAction="#handleButtonPointAction" prefHeight="40.0" prefWidth="40.0" text="." GridPane.columnIndex="7" GridPane.rowIndex="7" />
+            <Button fx:id="button0" accessibleText="0" minHeight="40.0" onAction="#handleNumberAction" prefHeight="40.0" prefWidth="40.0" text="0" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+             <Button fx:id="buttonPlus" minHeight="40.0" onAction="#handleOperatorAction" prefHeight="40.0" prefWidth="40.0" text="+" GridPane.columnIndex="8" GridPane.rowIndex="7" />         
+            <Button fx:id="buttonMinus" minHeight="40.0" onAction="#handleOperatorAction" prefHeight="40.0" prefWidth="40.0" text="-" GridPane.columnIndex="8" GridPane.rowIndex="6" />
+            <Button fx:id="buttonMultiply" minHeight="40.0" onAction="#handleOperatorAction" prefHeight="40.0" prefWidth="40.0" text="*" GridPane.columnIndex="8" GridPane.rowIndex="5" />
+            <Button fx:id="buttonDivide" minHeight="40.0" onAction="#handleOperatorAction" prefHeight="40.0" prefWidth="40.0" text="/" GridPane.columnIndex="8" GridPane.rowIndex="4" />
+            <Button fx:id="buttonEquals" minHeight="40.0" onAction="#handleButtonEqualsAction" prefHeight="90.0" prefWidth="40.0" text="=" GridPane.columnIndex="9" GridPane.rowIndex="6" GridPane.rowSpan="2" />
+             <Button fx:id="buttonSquareRoot" minHeight="40.0" minWidth="40.0" onAction="#hFunctionAction" prefHeight="40.0" prefWidth="40.0" text="√" GridPane.columnIndex="9" GridPane.rowIndex="4" />
+            <Button fx:id="button11" minHeight="40.0" onAction="#hCSTAction" prefHeight="40.0" prefWidth="40.0" text="π" GridPane.rowIndex="5" />
+            <Button fx:id="button1111" minHeight="40.0" onAction="#hFactorialAction" prefHeight="40.0" prefWidth="40.0" text="n!" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button fx:id="buttonLeftP" minHeight="40.0" onAction="#handleLeftPAction" prefHeight="40.0" prefWidth="40.0" text="(" GridPane.columnIndex="8" GridPane.rowIndex="3" />
+            <Button fx:id="buttonRightP" minHeight="40.0" onAction="#handleRightPAction" prefHeight="40.0" prefWidth="40.0" text=")" GridPane.columnIndex="9" GridPane.rowIndex="3" />
+            <Button fx:id="button11118" minHeight="40.0" onAction="#hFunctionAction" prefHeight="40.0" prefWidth="40.0" text="sin" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Button fx:id="button11117" minHeight="40.0" onAction="#hFunctionAction" prefHeight="40.0" prefWidth="40.0" text="cos" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <Button fx:id="button11115" minHeight="40.0" onAction="#hFunctionAction" prefHeight="40.0" prefWidth="40.0" text="tan" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <Button fx:id="button11114" minHeight="40.0" onAction="#hModulusAction" prefHeight="40.0" prefWidth="40.0" text="Mod" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="button11113" minHeight="40.0" onAction="#hFunctionAction" prefHeight="40.0" prefWidth="40.0" text="log" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+            <Button fx:id="button11111" minHeight="40.0" onAction="#hFunctionAction" prefHeight="40.0" prefWidth="40.0" text="tanh" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="button111114" minHeight="40.0" onAction="#hFunctionAction" prefHeight="40.0" prefWidth="40.0" text="³√" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <Button fx:id="button111115" minHeight="40.0" onAction="#hFunctionAction" prefHeight="40.0" prefWidth="40.0" text="cosh" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="button111116" minHeight="40.0" onAction="#hExpAction" prefHeight="40.0" prefWidth="40.0" text="eˣ" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <Button fx:id="button111117" minHeight="40.0" onAction="#hFunctionAction" prefHeight="40.0" prefWidth="40.0" text="sinh" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="button111119" minHeight="40.0" onAction="#handleRandomAction" prefHeight="40.0" prefWidth="40.0" text="Rnd" GridPane.rowIndex="7" />
+            <Button fx:id="button111121" minHeight="40.0" onAction="#hFunctionAction" prefHeight="40.0" prefWidth="40.0" text="ln" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+            <Button fx:id="buttonCE2" minHeight="40.0" minWidth="40.0" onAction="#handleMinusSignAction" prefHeight="40.0" prefWidth="40.0" text="( - )" GridPane.columnIndex="6" GridPane.rowIndex="7">
+               <tooltip>
+                  <Tooltip text="Clrear Entry" />
+               </tooltip>
+            </Button>
+            <Button fx:id="buttonCE21" minHeight="40.0" minWidth="40.0" onAction="#hCSTAction" prefHeight="40.0" prefWidth="40.0" text="ANS" GridPane.rowIndex="6">
+               <tooltip>
+                  <Tooltip text="Clrear Entry" />
+               </tooltip>
+            </Button>
+            <Button fx:id="buttonCE1" minHeight="40.0" minWidth="40.0" onAction="#handleButtonCAction" prefHeight="40.0" prefWidth="40.0" text="C" GridPane.columnIndex="7" GridPane.rowIndex="3">
+               <tooltip>
+                  <Tooltip text="Clrear Entry" />
+               </tooltip>
+            </Button>
+            <Button fx:id="button112" minHeight="40.0" onAction="#hCSTAction" prefHeight="40.0" prefWidth="40.0" text="e" GridPane.rowIndex="4" />
+            <Button fx:id="button1112" minHeight="40.0" onAction="#handleOperatorAction" prefHeight="40.0" prefWidth="40.0" text="^" GridPane.columnIndex="9" GridPane.rowIndex="5" />
+            <Button fx:id="button111181" minHeight="40.0" onAction="#hFunctionAction" prefHeight="40.0" prefWidth="40.0" text="tan⁻¹" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+            <Button fx:id="button111182" minHeight="40.0" onAction="#hFunctionAction" prefHeight="40.0" prefWidth="40.0" text="cos⁻¹" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+            <Button fx:id="button111183" minHeight="40.0" onAction="#hFunctionAction" prefHeight="40.0" prefWidth="40.0" text="sin⁻¹" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <ChoiceBox fx:id="choicebox" prefHeight="25.0" prefWidth="90.0" GridPane.columnSpan="2" GridPane.rowIndex="3">              
+            </ChoiceBox>
+                          
+                
+         </children>
+      </GridPane>
+        <Label fx:id="labelResult" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="27.0" layoutY="42.0" prefHeight="70.0" prefWidth="260.0" style="-fx-background-color: #fff;" text="0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="0.0">
+        
+                  <padding>
+            <Insets right="10.0" />
+         </padding>
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Label>
+          <Label fx:id="labelEntry" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutY="25.0" prefHeight="17.0" style="-fx-background-color: #fff;" textAlignment="RIGHT" AnchorPane.rightAnchor="0.0" />
+        <Label fx:id="labelMemory" alignment="CENTER_LEFT" contentDisplay="CENTER" layoutX="2.0" layoutY="65.0" prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="0.0" />
+      <DialogPane fx:id="dialogPane" disable="true" expanded="true" layoutY="50.0" visible="false">
+         <content>
+            <Label text="Simple calculator&#10;Developped by Haitham Moumni.&#10;Under GNU license&#10;Version 1.0&#10;Developped with java 8 with javafx on netbeans,&#10;using double primitive type in calculations&#10;double numbers are rounded &#10;and limited to 14 digits after the decimal point&#10;the calculator may loose precision with very large numbers&#10; as it uses the double precision of 64 bits of java&#10;">
+               <font>
+                  <Font size="10.0" />
+               </font>
+               <graphic>
+                  <Button fx:id="closeAboutButton" onAction="#handleCloseAboutButtonAction" text="OK" />
+               </graphic></Label>                
+         </content>
+        
+           
+     
+      </DialogPane>   
+    </children>
+</AnchorPane>
